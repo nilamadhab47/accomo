@@ -277,16 +277,16 @@ export interface FormikStepProps
   label: string;
 }
 
-export function FormikStep({ children }: FormikStepProps) {
+function FormikStep({ children }: FormikStepProps) {
   return <>{children}</>;
 }
 
-export function FormikStepper({
+ function FormikStepper({
   children,
   ...props
 }: FormikConfig<FormikValues>) {
-  // @ts-ignore
-  const childrenArray = React.Children.toArray(
+    const childrenArray = React.Children.toArray(
+      // @ts-ignore
     children
   ) as React.ReactElement<FormikStepProps>[];
   const [step, setStep] = useState(0);
